@@ -1,0 +1,40 @@
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h2>{{ product.title }}</h2>
+    
+    <div class="row mt-4">
+        
+        <!-- Product Image Section -->
+        <div class="col-md-6">
+            <img src="{% static product.product_image %}" alt="{{ product.title }}" class="img-fluid rounded" style="width: 300px; height: 300px;">
+        </div>
+        
+        <!-- Product Details Section -->
+        <div class="col-md-6">
+            
+            <!-- Product Price -->
+            <h4 class="mb-4">Price: Rs {{ product.selling_price }}/500 grams</h4>
+            
+            <!-- Quantity Selection -->
+            <div class="mb-4">
+                <label for="quantity" class="form-label">Qty:</label>
+                <select name="quantity" id="quantity" class="form-select">
+                    <option value="250">250 grams</option>
+                    <option value="500">500 grams</option>
+                    <option value="750">750 grams</option>
+                    <option value="1000">1000 grams</option>
+                </select>
+            </div>
+            
+            <!-- Add to Cart Button -->
+            <button type="button" class="btn btn-primary">Add to Cart</button>
+            
+        </div>  <!-- End of Product Details Section -->
+        
+    </div>  <!-- End of Row -->
+</div>  <!-- End of Container -->
+
+{% endblock %}
